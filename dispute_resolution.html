@@ -49,5 +49,83 @@
         </ul>
       </div>
     </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1>Dispute Resolution</h1>
+        <p>
+          At Guardian Recovery Services we take great pride in conducting
+          ourselves in a professional and considerate manner. If you feel that
+          you have been treated unfairly by a representative of Guardian
+          Recovery Services, please fill out the resolution form below and click
+          send to notify us of your complaint. We will make every attempt to
+          ensure your utmost satisfaction by resolving the issue quickly and
+          accurately.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullname"
+            placeholder="Please enter your full name."
+            name="fullname"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email Address:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Please enter your email address."
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="filenumber">Your File or Account Number:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="filenumber"
+            placeholder="Please enter your file or account number."
+            name="filenumber"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phonenumber"
+            >Your Phone Number (Example: XXX-XXX-XXXX):</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="phonenumber"
+            placeholder="Please enter your phone number."
+            name="phonenumber"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="comment"
+            >Please provide a brief description of dispute or complaint and the
+            name of the representative you were dealing with:
+          </label>
+          <textarea
+            class="form-control"
+            rows="5"
+            id="comment"
+            name="text"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
