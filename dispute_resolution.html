@@ -11,11 +11,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <a class="navbar-brand" href="index.html"><i class="fas fa-home"></i></a>
+      <a class="navbar-brand active" href="index.html"
+        ><i class="fas fa-home">Guardian Recovery Services</i></a
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -66,72 +69,94 @@
     </div>
 
     <div class="container">
-      <form
-        action="/guardian_revamp/email_scripts/dispute_resolution_email.php"
-        method="POST"
-      >
-        <div class="form-group">
-          <label for="fullname">Full Name:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="fullname"
-            placeholder="Please enter your full name."
-            name="fullname"
-            required
-          />
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <h5>Placeholder Title</h5>
         </div>
-        <div class="form-group">
-          <label for="email">Your Email Address:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Please enter your email address."
-            name="email"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="filenumber">Your File or Account Number:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="filenumber"
-            placeholder="Please enter your file or account number."
-            name="filenumber"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="phonenumber"
-            >Your Phone Number (Example: XXX-XXX-XXXX):</label
+        <div class="card-body">
+          <form
+            action="/guardian_revamp/email_scripts/dispute_resolution_email.php"
+            method="POST"
           >
-          <input
-            type="text"
-            class="form-control"
-            id="phonenumber"
-            placeholder="Please enter your phone number."
-            name="phonenumber"
-            required
-          />
+            <div class="form-group">
+              <label for="fullname">Full Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="fullname"
+                placeholder="Please enter your full name."
+                name="fullname"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email Address:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Please enter your email address."
+                name="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="filenumber">Your File or Account Number:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="filenumber"
+                placeholder="Please enter your file or account number."
+                name="filenumber"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phonenumber"
+                >Your Phone Number (Example: XXX-XXX-XXXX):</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="phonenumber"
+                placeholder="Please enter your phone number."
+                name="phonenumber"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment"
+                >Please provide a brief description of dispute or complaint and
+                the name of the representative you were dealing with:
+              </label>
+              <textarea
+                class="form-control"
+                rows="5"
+                id="comment"
+                name="text"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S"
+                data-callback="verifyRecaptchaCallback"
+                data-expired-callback="expiredRecaptchaCallback"
+              ></div>
+              <input
+                class="form-control d-none"
+                data-recaptcha="true"
+                required
+                data-error="Please complete the Captcha"
+              />
+              <div class="help-block with-errors"></div>
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="comment"
-            >Please provide a brief description of dispute or complaint and the
-            name of the representative you were dealing with:
-          </label>
-          <textarea
-            class="form-control"
-            rows="5"
-            id="comment"
-            name="text"
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-dark">Submit</button>
-      </form>
+      </div>
+      <br />
     </div>
   </body>
 </html>

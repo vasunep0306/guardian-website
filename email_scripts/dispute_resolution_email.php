@@ -21,7 +21,7 @@ $mail->Password = 'colts101';
 /* Add a recipient. */
 
 try {
-  $mail->setFrom("vasu@gsholdingsllc.com", 'Vasu Neppalli');
+  //$mail->setFrom("vasunep0306@gmail.com", 'Test');
   $mail->addAddress('vasu@gsholdingsllc.com', 'Emperor');
   /* Set the subject. */
   $mail->Subject = 'Force';
